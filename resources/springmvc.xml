@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/c"
+       xmlns:contollerext="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!-- 扫描注解所在包 -->
+    <contollerext:component-scan base-package="com.jpa.controller"/>
+    <!-- 加载包中注解 -->
+    <mvc:annotation-driven/>
+    <!-- 配置请求资源的路径 -->
+    <mvc:resources location="/img/" mapping="/img/*"/>
+    <!-- 配置文件夹的映射路径 -->
+    <mvc:resources location="/files/" mapping="/files/*"/>
+    <!-- 自定义视图解析器类;该配置可以省略 -->
+    <!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean> -->
+</beans>
